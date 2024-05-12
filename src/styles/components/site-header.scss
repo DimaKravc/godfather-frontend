@@ -1,0 +1,20 @@
+.site-header {
+    padding: 20px 0;
+
+    &__inner {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+    }
+    
+    &__col {
+        display: flex;
+        align-items: end;
+    }
+    
+    &__button-group {
+        .button {
+            margin-left: 16px;
+        }
+    }
+}

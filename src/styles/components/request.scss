@@ -1,0 +1,107 @@
+.request {
+    margin-bottom: 78px;
+
+    &__top-section {
+        position: relative;
+        max-width: 70%;
+        float: left;
+    }
+
+    &__description {
+        background: $secondary-action-color;
+        padding: 14px 36px 14px 16px;
+        border-radius: 4px;
+
+        font-size: 15px;
+        font-weight: $medium-font-weight;
+
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    &__title {
+        margin: 0 0 0 -20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        min-width: 175px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        background: #ffffff;
+        border-radius: 4px;
+        font-weight: $medium-font-weight;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    &__form-section {
+        flex: 1;
+        width: 70%;
+        display: flex;
+        align-items: stretch;
+        // background: $tertiary-action-color;
+        border-radius: 4px;
+        float: right;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.15);
+        background: rgb(0, 129, 207);
+        background: linear-gradient(137deg, rgba(0, 129, 207, 1) 0%, rgba(212, 241, 252, 1) 100%);
+
+        margin-top: -36px;
+        padding: 64px 45px 38px;
+
+        &__hint {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-weight: $medium-font-weight;
+            padding-right: 26px;
+        }
+
+        &__picture {
+            flex: 0 0 285px;
+            margin: 0;
+        }
+
+        &__form {
+            flex: 0 0 240px;
+            padding-left: 25px;
+            height: auto;
+
+            .contact-form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    $this: &;
+
+    &_style_reverse {
+        #{$this}__top-section {
+            float: right;
+        }
+
+        #{$this}__description {
+            padding: 14px 16px 14px 36px;
+        }
+
+        #{$this}__title {
+            left: initial;
+            right: 100%;
+            margin: 0 -20px 0 0;
+        }
+
+        #{$this}__form-section {
+            float: left;
+        }
+    }
+}

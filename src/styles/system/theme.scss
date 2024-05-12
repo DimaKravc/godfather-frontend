@@ -1,0 +1,91 @@
+@font-face {
+    font-family: $base-font-family;
+    src: url('@/fonts/ubuntu/Ubuntu-Light.ttf') format('truetype');
+    font-weight: $light-font-weight;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $base-font-family;
+    src: url('@/fonts/ubuntu/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: $base-font-weight;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $base-font-family;
+    src: url('@/fonts/ubuntu/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: $medium-font-weight;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $base-font-family;
+    src: url('@/fonts/ubuntu/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: $bold-font-weight;
+    font-style: normal;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+html,
+body {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family, san-serif;
+    color: $base-color;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@media (max-width: $screen-lg-max) {
+    html {
+        font-size: $base-font-size - 1px;
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    html {
+        font-size: $base-font-size - 2px;
+    }
+}
+
+@media (max-width: $screen-sm-max - 200px) {
+    html {
+        font-size: $base-font-size - 3px;
+    }
+}

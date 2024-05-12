@@ -1,0 +1,25 @@
+{
+  "name": "godfather",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-combine-media-query": "^1.0.1",
+    "sass": "^1.76.0",
+    "vite": "^5.2.11"
+  },
+  "dependencies": {
+    "inputmask": "^5.0.8",
+    "validate.js": "^0.13.1"
+  }
+}

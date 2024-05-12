@@ -1,0 +1,75 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__group {
+        &__label {
+            display: none;
+        }
+
+        &__input {
+            width: 100%;
+            background: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            height: 33px;
+            line-height: 33px;
+            padding: 0 14px;
+            font-size: 15px;
+            transition: background-color .13s linear;
+            
+            @mixin placeholder {
+                color: $base-color;
+            }
+    
+            &::-webkit-input-placeholder {
+                @include placeholder
+            }
+    
+            &::-moz-placeholder {
+                @include placeholder
+            }
+    
+            &:-ms-input-placeholder {
+                @include placeholder
+            }
+    
+            &:-moz-placeholder {
+                @include placeholder
+            }
+    
+
+            &:focus {
+                background-color: lighten($base-input-focus-color, 27%);
+            }
+        }
+
+        $this: &;
+
+        &.has-error {
+            #{$this}__input {
+                background-color: lighten($base-input-error-color, 47%);
+                
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover, 
+                &:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0px 1000px lighten($base-input-error-color, 47%) inset;
+                }
+            }
+        }
+        
+        &.has-success {
+            #{$this}__input {
+                background-color: lighten($base-input-success-color, 57%);
+                
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover, 
+                &:-webkit-autofill:focus {
+                    -webkit-box-shadow: 0 0 0px 1000px lighten($base-input-success-color, 57%) inset;
+                }
+            }
+        }
+    }
+}
