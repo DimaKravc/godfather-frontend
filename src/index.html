@@ -64,6 +64,7 @@
                             <label for="entrant-email" class="contact-form__group__label">Почта</label>
                             <input name="email" type="text" id="entrant-email" class="contact-form__group__input" placeholder="Почта"/>
                         </div>
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
                         <div class="contact-form__submit">
                             <button type="submit" class="button">Хочу на консультацию</button>
                         </div>
@@ -100,6 +101,7 @@
                             <label for="student-email" class="contact-form__group__label">Почта</label>
                             <input name="email" type="text" id="student-email" class="contact-form__group__input" placeholder="Почта"/>
                         </div>
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
                         <div class="contact-form__submit">
                             <button type="submit" class="button">Хочу на консультацию</button>
                         </div>
@@ -134,6 +136,7 @@
                             <label for="doctor-email" class="contact-form__group__label">Почта</label>
                             <input name="email" type="text" id="doctor-email" class="contact-form__group__input" placeholder="Почта"/>
                         </div>
+                        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
                         <div class="contact-form__submit">
                             <button type="submit" class="button">Хочу на консультацию</button>
                         </div>

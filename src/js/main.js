@@ -27,9 +27,9 @@ import Inputmask from "inputmask";
 
                 handleSubmitForm(form);
             });
-            
+
             const inputs = form.querySelectorAll('input');
-            
+
             Array.prototype.slice.call(inputs).forEach(input => {
                 input.addEventListener('change', e => {
                     const errors = validate(form, constraints);
@@ -49,7 +49,7 @@ import Inputmask from "inputmask";
         };
 
         const showErrors = (form, errors) => {
-            Array.prototype.slice.call(form.querySelectorAll('input[name]')).forEach(input => {
+            Array.prototype.slice.call(form.querySelectorAll('input[name]:not([type=hidden])')).forEach(input => {
                 showErrorsForInput(input, errors && errors[input.name]);
             });
         };
@@ -58,7 +58,7 @@ import Inputmask from "inputmask";
             const formGroup = closestParent(input.parentNode, 'form-group');
 
             resetFormGroup(formGroup);
-            
+
             if (errors) {
                 formGroup.classList.add('has-error');
             } else {
@@ -77,20 +77,20 @@ import Inputmask from "inputmask";
                 return closestParent(child.parent, dataNode);
             }
         };
-        
+
         const resetFormGroup = (formGroup) => {
             formGroup.classList.remove('has-error');
             formGroup.classList.remove('has-success');
         };
-        
+
         Inputmask({
             onBeforeMask: (value, opts) => {
                 if (/^8\d{10}$/.test(value)) {
                     return `+7${value.slice(1)}`
                 }
-                
+
                 return value
-            } 
+            }
         }).mask(document.querySelectorAll('[data-inputmask]'));
     })
 })();

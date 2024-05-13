@@ -3,6 +3,7 @@ import {defineConfig} from "vite";
 import autoprefixer from "autoprefixer";
 import combineSelectors from "postcss-combine-duplicated-selectors";
 import combineMediaQueries from "postcss-combine-media-query";
+import copy from "rollup-plugin-copy";
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -18,9 +19,9 @@ export default defineConfig({
         }
     },
     resolve: {
-      alias: {
-          '@': path.resolve(__dirname, 'src')
-      }
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        }
     },
     base: '',
     build: {
@@ -34,5 +35,17 @@ export default defineConfig({
             }
         }
     },
+    plugins: [
+        copy({
+            targets: [
+                {
+                    src: 'src/index.html',
+                    dest: 'dist',
+                    rename: 'index.hbs'
+                }
+            ],
+            hook: 'writeBundle'
+        })
+    ],
     assetsInclude: ["**/*.min.js"]
 })
