@@ -1,0 +1,11 @@
+.fail {
+    display: none;
+    
+    .page-title {
+        margin-bottom: 40px;
+    }
+    
+    &__retry-button {
+        margin: auto;
+    }
+}
