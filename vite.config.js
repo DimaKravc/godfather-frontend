@@ -12,6 +12,11 @@ const copyFile = (src, dest) => {
     console.info(`File copied: ${dest}`)
 }
 
+const deleteFile = (src) => {
+    fs.unlinkSync(src);
+    console.info(`File deleted: ${src}`)
+}
+
 export default defineConfig({
     root: path.join(__dirname, "src"),
     css: {
@@ -45,6 +50,14 @@ export default defineConfig({
                             const dest = path.resolve(__dirname, 'dist', 'index.hbs')
 
                             copyFile(src, dest);
+                        }
+                    },
+                    {
+                        name: 'remove-index-html',
+                        writeBundle() {
+                            const src = path.resolve(__dirname, 'dist', 'index.html')
+
+                            deleteFile(src)
                         }
                     }
                 ]
