@@ -3,9 +3,14 @@ import {defineConfig} from "vite";
 import autoprefixer from "autoprefixer";
 import combineSelectors from "postcss-combine-duplicated-selectors";
 import combineMediaQueries from "postcss-combine-media-query";
-import copy from "rollup-plugin-copy";
+import fs from 'fs';
 
 const isProd = process.env.NODE_ENV === 'production';
+
+const copyFile = (src, dest) => {
+    fs.copyFileSync(src, dest);
+    console.info(`File copied: ${dest}`)
+}
 
 export default defineConfig({
     root: path.join(__dirname, "src"),
@@ -31,21 +36,20 @@ export default defineConfig({
             output: {
                 entryFileNames: `assets/[name].[hash].js`,
                 chunkFileNames: `assets/[name].[hash].js`,
-                assetFileNames: `assets/[name].[hash].[ext]`
+                assetFileNames: `assets/[name].[hash].[ext]`,
+                plugins: [
+                    {
+                        name: 'copy-index-html',
+                        writeBundle() {
+                            const src = path.resolve(__dirname, 'dist', 'index.html')
+                            const dest = path.resolve(__dirname, 'dist', 'index.hbs')
+
+                            copyFile(src, dest);
+                        }
+                    }
+                ]
             }
         }
     },
-    plugins: [
-        copy({
-            targets: [
-                {
-                    src: 'src/index.html',
-                    dest: 'dist',
-                    rename: 'index.hbs'
-                }
-            ],
-            hook: 'writeBundle'
-        })
-    ],
     assetsInclude: ["**/*.min.js"]
 })
