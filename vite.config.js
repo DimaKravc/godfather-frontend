@@ -22,7 +22,6 @@ export default defineConfig({
     css: {
         postcss: {
             plugins: [
-                combineMediaQueries(),
                 combineSelectors({removeDuplicatedValues: true}),
                 autoprefixer(),
             ]

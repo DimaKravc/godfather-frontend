@@ -1,20 +1,32 @@
 .site-header {
-    padding: 20px 0;
+    padding: rem(20px) 0;
 
     &__inner {
         display: flex;
         align-items: end;
         justify-content: space-between;
+
+        @media (max-width: $screen-md-max) {
+            justify-content: center;
+        }
     }
-    
+
     &__col {
         display: flex;
         align-items: end;
+
+        &_hide_md {
+            @media (max-width: $screen-md-max) {
+                display: none;
+            }
+        }
     }
-    
+
     &__button-group {
+        display: flex;
+
         .button {
-            margin-left: 16px;
+            margin-left: rem(16px);
         }
     }
 }

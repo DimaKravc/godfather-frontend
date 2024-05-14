@@ -37,10 +37,13 @@ body {
     box-sizing: border-box;
 }
 
-body {
-    min-width: 320px;
+html {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family, san-serif;
     color: $base-color;
+}
+
+body {
+    min-width: 320px;
 }
 
 img {
@@ -72,7 +75,13 @@ textarea {
     }
 }
 
-@media (max-width: $screen-lg-max) {
+@media (min-width: $screen-lg-min) {
+    html {
+        font-size: $base-font-size + 1;
+    }
+}
+
+@media (max-width: $screen-md-max) {
     html {
         font-size: $base-font-size - 1px;
     }
