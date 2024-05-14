@@ -165,6 +165,7 @@
 
             @media (max-width: $screen-sm-max) {
                 padding-left: rem(16px);
+                padding-top: rem(26px);
             }
         }
 
@@ -172,6 +173,12 @@
             left: initial;
             right: 100%;
             margin: 0 rem(-20px) 0 0;
+
+            @media (max-width: $screen-sm-max) {
+                left: 50%;
+                right: initial;
+                margin: 0 0 rem(-20px);
+            }
         }
 
         #{$this}__form-section {
